@@ -31,7 +31,7 @@ jobs:
     - name: Build Linux Binary
       run: yarn build:linux -o build/${RELEASE_FILE}-linux
     - name: Build Windows Binary
-      run: yarn build:windwos -o build/${RELEASE_FILE}-windows
+      run: yarn build:windows -o build/${RELEASE_FILE}-windows
     - name: Upload build artifacts to GitHub Actions
       uses: actions/upload-artifact@v1
       with:
