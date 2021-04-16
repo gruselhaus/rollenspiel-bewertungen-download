@@ -25,7 +25,8 @@ const sources = [
       output += "\n" + item.title + ";" + item.link;
     });
 
-    const filename = path.resolve(__dirname, "csv", source.name + ".csv");
+    const filename = path.resolve(path.dirname(process.execPath), "csv", source.name + ".csv");
+    if (!fs.existsSync(path.resolve(path.dirname(process.execPath), "csv"))) fs.mkdirSync(path.resolve(path.dirname(process.execPath), "csv"));
     if (fs.existsSync(filename)) fs.unlinkSync(filename);
 
     fs.writeFileSync(filename, output);

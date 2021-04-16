@@ -1,0 +1,51 @@
+name: Build binaries and attach them to the Release
+
+on:
+  push:
+  release:
+    types: [created]
+    branches:
+      - main
+
+jobs:
+  build:
+    env:
+      RELEASE_FILE: ${{github.event.repository.name}}-${{github.event.release.tag_name}}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js "14.x"
+      uses: actions/setup-node@v1
+      with:
+        node-version: "14.x"
+    - name: Cache node modules
+      uses: actions/cache@v1
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-node-${{ hashFiles('ui/**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+    - name: Install dependencies
+      run: yarn install --prefer-offline
+    - name: Build macOS Binary
+      run: yarn build:macOS -o build/${RELEASE_FILE}-macOS
+    - name: Build Linux Binary
+      run: yarn build:linux -o build/${RELEASE_FILE}-linux
+    - name: Build Windows Binary
+      run: yarn build:windwos -o build/${RELEASE_FILE}-windows
+    - name: Upload build artifacts to GitHub Actions
+      uses: actions/upload-artifact@v1
+      with:
+        name: build
+        path: build
+    - name: Package Release
+      run: tar -zcf ${RELEASE_FILE}.tar.gz build LICENSE
+    - name: Upload Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      with:
+        asset_path: ${{env.RELEASE_FILE}}.tar.gz
+        upload_url: ${{github.event.release.upload_url}}
+        asset_name: ${{env.RELEASE_FILE}}.tar.gz
+        asset_content_type: application/octet-stream

@@ -1,8 +1,13 @@
 {
+  "name": "rollenspiel-bewertungen-download",
   "main": "index.js",
+  "version": "0.0.1",
   "scripts": {
     "start": "node .",
-    "build": "pkg --out-path build index.js"
+    "build": "rm -rf build; yarn build:macOS; yarn build:linux; yarn build:windows",
+    "build:macOS": "pkg -t node14-macos-x64 index.js",
+    "build:linux": "pkg -t node14-linux-x64 index.js",
+    "build:windows": "pkg -t node14-win-x64 index.js"
   },
   "license": "MIT",
   "private": "false",
