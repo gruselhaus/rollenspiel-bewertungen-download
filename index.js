@@ -13,6 +13,7 @@ const sources = [
   { name: "engorsdereblick", url: "https://engorsdereblick.wordpress.com/feed" },
   { name: "seanchuigoesrlyeh", url: "https://seanchuigoesrlyeh.wordpress.com/feed" },
   { name: "weltenraum", url: "https://www.weltenraum.at/category/spiele/rollenspiele/feed" },
+  { name: "orkenspaltertv", url: "https://www.youtube.com/feeds/videos.xml?playlist_id=PL9lrD0EiOevQWJEMMy1551GZdMtjqVCeQ" },
 ];
 
 (async () => {
@@ -25,7 +26,7 @@ const sources = [
       output += "\n" + item.title + ";" + item.link;
     });
 
-    const filename = path.resolve(path.dirname(process.execPath), "csv", source.name + ".csv");
+    const filename = path.resolve(process.cwd(), "csv", source.name + ".csv");
     if (!fs.existsSync(path.resolve(path.dirname(process.execPath), "csv"))) fs.mkdirSync(path.resolve(path.dirname(process.execPath), "csv"));
     if (fs.existsSync(filename)) fs.unlinkSync(filename);
 

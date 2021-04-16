@@ -38,7 +38,7 @@ jobs:
         name: build
         path: build
     - name: Package Release
-      run: tar -zcf ${RELEASE_FILE}.tar.gz build LICENSE
+      run: tar -zcf ${RELEASE_FILE}.tar.gz build LICENSE.txt
     - name: Upload Release
       uses: actions/upload-release-asset@v1
       env:
