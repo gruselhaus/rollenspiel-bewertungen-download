@@ -1,7 +1,6 @@
 name: Build binaries and attach them to the Release
 
 on:
-  push:
   release:
     types: [created]
     branches:
