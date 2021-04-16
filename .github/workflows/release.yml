@@ -17,13 +17,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: "14.x"
-    - name: Cache node modules
-      uses: actions/cache@v1
-      with:
-        path: node_modules
-        key: ${{ runner.os }}-node-${{ hashFiles('ui/**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
     - name: Install dependencies
       run: yarn install --prefer-offline
     - name: Build macOS Binary
