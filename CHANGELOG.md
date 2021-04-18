@@ -1,3 +1,14 @@
+### 0.0.5 / 2021-04-18
+
+- [93438fef56] - V0.0.5 (Nico Finkernagel)
+- [75a8b7cba2] - Adding Fantasykritik as a source (Nico Finkernagel)
+### 0.0.4 / 2021-04-18
+
+- [9d55b9fac9] - V0.0.4 (Gruselhaus)
+- [8f429be523] - Adding more sources (Gruselhaus)
+- [f97c2fc494] - Removing the caching step as it is unsupportet at the event type (Gruselhaus)
+- [01a3242932] - Adding the changelog (Gruselhaus)
+
 ### 0.0.3 / 2021-04-16
 
 - [bb9aac9681] - Refactoring (Gruselhaus)
