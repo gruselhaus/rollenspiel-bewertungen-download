@@ -20,6 +20,7 @@ const sources = [
   { name: "nandurion", url: "https://rezensionen.nandurion.de/feed/" },
   { name: "würfelheld", url: "https://wuerfelheld.wordpress.com/category/rezi-rollenspiel/feed" },
   { name: "schlachtenwüter", url: "https://www.youtube.com/feeds/videos.xml?playlist_id=PLMHDsyqp0PG20bXEabQJuRviLbBuZ9zdv" },
+  {name: "fantasykritik", url:: "https://fantasykritik.wordpress.com/category/rezension/feed/"},
 ];
 
 (async () => {
