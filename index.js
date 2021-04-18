@@ -9,11 +9,17 @@ const parser = new Parser();
 const path = require("path");
 const fs = require("fs");
 
+// https://jeffkeeling.github.io/youtube_rss_extractor/
 const sources = [
   { name: "engorsdereblick", url: "https://engorsdereblick.wordpress.com/feed" },
   { name: "seanchuigoesrlyeh", url: "https://seanchuigoesrlyeh.wordpress.com/feed" },
   { name: "weltenraum", url: "https://www.weltenraum.at/category/spiele/rollenspiele/feed" },
   { name: "orkenspaltertv", url: "https://www.youtube.com/feeds/videos.xml?playlist_id=PL9lrD0EiOevQWJEMMy1551GZdMtjqVCeQ" },
+  { name: "frostypenandpaper", url: "https://frostypenandpaper.de/category/rezensionen/feed/" },
+  { name: "frostypenandpaper-youtube", url: "https://www.youtube.com/feeds/videos.xml?playlist_id=PLJdf5CrImXUn_tZ4u9vjEyb15yzZTFKNG" },
+  { name: "nandurion", url: "https://rezensionen.nandurion.de/feed/" },
+  { name: "würfelheld", url: "https://wuerfelheld.wordpress.com/category/rezi-rollenspiel/feed" },
+  { name: "schlachtenwüter", url: "https://www.youtube.com/feeds/videos.xml?playlist_id=PLMHDsyqp0PG20bXEabQJuRviLbBuZ9zdv" },
 ];
 
 (async () => {
