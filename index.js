@@ -12,7 +12,7 @@ const fs = require("fs");
 // https://jeffkeeling.github.io/youtube_rss_extractor/
 const sources = [
   { name: "engorsdereblick", url: "https://engorsdereblick.wordpress.com/feed" },
-  { name: "seanchuigoesrlyeh", url: "https://seanchuigoesrlyeh.wordpress.com/feed" },
+  { name: "seanchuigoesrlyeh", url: "https://seanchuigoesrlyeh.wordpress.com/category/rezensionen/feed" },
   { name: "weltenraum", url: "https://www.weltenraum.at/category/spiele/rollenspiele/feed" },
   { name: "orkenspaltertv", url: "https://www.youtube.com/feeds/videos.xml?playlist_id=PL9lrD0EiOevQWJEMMy1551GZdMtjqVCeQ" },
   { name: "frostypenandpaper", url: "https://frostypenandpaper.de/category/rezensionen/feed/" },
@@ -21,16 +21,17 @@ const sources = [
   { name: "würfelheld", url: "https://wuerfelheld.wordpress.com/category/rezi-rollenspiel/feed" },
   { name: "schlachtenwüter", url: "https://www.youtube.com/feeds/videos.xml?playlist_id=PLMHDsyqp0PG20bXEabQJuRviLbBuZ9zdv" },
   { name: "fantasykritik", url: "https://fantasykritik.wordpress.com/category/rezension/feed/" },
+  { name: "neueabenteuer", url: "https://neueabenteuer.com/category/rezensionen/feed/" },
 ];
 
 (async () => {
   for (const source of sources) {
     console.log(`Downloading: ${source.name}`);
     const feed = await parser.parseURL(source.url);
-    let output = "name; url";
+    let output = "name;url;datum";
 
     feed.items.forEach((item) => {
-      output += "\n" + item.title + ";" + item.link;
+      output += "\n" + item.title + ";" + item.link + ";" + item.isoDate;
     });
 
     const filename = path.resolve(process.cwd(), "csv", source.name + ".csv");
