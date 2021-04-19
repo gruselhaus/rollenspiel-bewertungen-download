@@ -1,7 +1,13 @@
+### 0.0.6 / 2021-04-19
+
+- [4bcc4b534c] - Adding publishing date to output and adding a new source (Gruselhaus)
+- [3df5d7e458] - Updating the CHANGELOG (Gruselhaus)
+
 ### 0.0.5 / 2021-04-18
 
 - [93438fef56] - V0.0.5 (Nico Finkernagel)
 - [75a8b7cba2] - Adding Fantasykritik as a source (Nico Finkernagel)
+
 ### 0.0.4 / 2021-04-18
 
 - [9d55b9fac9] - V0.0.4 (Gruselhaus)
@@ -30,4 +36,3 @@
 - [3ca35829ff] - Upload build to GitHub Release (Gruselhaus)
 - [d9a1973eaa] - Adding build system (Gruselhaus)
 - [f17bdd86d7] - Initial commit (Gruselhaus)
-
