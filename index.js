@@ -22,6 +22,7 @@ const sources = [
   { name: "schlachtenwüter", url: "https://www.youtube.com/feeds/videos.xml?playlist_id=PLMHDsyqp0PG20bXEabQJuRviLbBuZ9zdv" },
   { name: "fantasykritik", url: "https://fantasykritik.wordpress.com/category/rezension/feed/" },
   { name: "neueabenteuer", url: "https://neueabenteuer.com/category/rezensionen/feed/" },
+  { name: "teilzeithelden", url: "https://www.teilzeithelden.de/category/all/pen-und-paper/penpaper-rezensionen/feed/" },
 ];
 
 (async () => {
