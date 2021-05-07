@@ -23,6 +23,7 @@ const sources = [
   { name: "fantasykritik", url: "https://fantasykritik.wordpress.com/category/rezension/feed/" },
   { name: "neueabenteuer", url: "https://neueabenteuer.com/category/rezensionen/feed/" },
   { name: "teilzeithelden", url: "https://www.teilzeithelden.de/category/all/pen-und-paper/penpaper-rezensionen/feed/" },
+  { name: "tellingaventurien", url: "https://tellingaventurien.home.blog/feed/" },
 ];
 
 (async () => {

@@ -1,7 +1,7 @@
 {
   "name": "rollenspiel-bewertungen-download",
   "main": "index.js",
-  "version": "0.0.7",
+  "version": "x.y.z",
   "scripts": {
     "start": "node .",
     "build": "rm -rf build; yarn build:macOS -o build/macOS/macOS; yarn build:linux -o build/linux/build ; yarn build:windows -o build/windows/build",
