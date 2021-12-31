@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Nico Finkernagel
+ * Copyright (c) 2021 - 2022 Nico Finkernagel
  * This code is licensed under MIT license (see LICENSE for details)
  */
 
